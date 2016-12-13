@@ -30,7 +30,8 @@
 
 - (void)addNavView
 {
-    FirstView *view = [[FirstView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 600)];
+    FirstView *view = [[FirstView alloc]initWithFrame:CGRectMake(75, 100, 250, 400)];
+    view.center = self.view.center;
     NYNavigationView *navView = [[NYNavigationView alloc]initWithRootView:view];
     [self.view addSubview:navView];
 }

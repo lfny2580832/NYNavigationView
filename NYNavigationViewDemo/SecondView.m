@@ -33,7 +33,7 @@
 
 - (void)push
 {
-    ThirdView *view = [[ThirdView alloc]initWithFrame:CGRectMake(0, 0, 300, 600)];
+    ThirdView *view = [[ThirdView alloc]initWithFrame:CGRectMake(0, 0, 250, 400)];
     [self.ny_naviagationView pushView:view animated:YES];
 }
 

@@ -23,7 +23,7 @@
         [btn addTarget:self action:@selector(push) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
         
-        UIButton *btn2 = [[UIButton alloc]initWithFrame:CGRectMake(0, 200, 100, 100)];
+        UIButton *btn2 = [[UIButton alloc]initWithFrame:CGRectMake(0, 100, 100, 100)];
         [btn2 setTitle:@"pop" forState:UIControlStateNormal];
         [btn2 addTarget:self action:@selector(pop) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn2];
