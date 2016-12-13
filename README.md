@@ -1,0 +1,2 @@
+# NYNavigationView
+模拟系统的UINavigationController，配合CoreAnimation，使用数组栈，对Views进行push、pop管理
