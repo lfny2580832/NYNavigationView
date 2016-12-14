@@ -22,10 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 600, 100, 40)];
-    btn.backgroundColor = [UIColor grayColor];
-    [btn addTarget:self action:@selector(addNavView) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
+    [self addNavView];
 }
 
 - (void)addNavView
@@ -36,6 +33,9 @@
     [self.view addSubview:navView];
 }
 
+- (IBAction)pop:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 @end

@@ -17,6 +17,8 @@
 @implementation NYNavigationView
 {
     CGFloat _width;
+    BOOL _isPushing;
+    BOOL _isPoping;
 }
 
 static NSString *PUSH = @"push";
@@ -43,6 +45,10 @@ static NSString *POP = @"pop";
 - (void)pushView:(UIView *)view animated:(BOOL)animated
 {
     if (animated) {
+        if (_isPushing) {
+            return;
+        }
+        _isPushing = YES;
         CAKeyframeAnimation *pushAnimation = [self animationWithKeyPath:@"position.x" values:@[@(1.5*_width),@(0.5*_width)]];
         [pushAnimation setValue:PUSH forKey:PUSH];
         [view.layer addAnimation:pushAnimation forKey:PUSH];
@@ -62,6 +68,10 @@ static NSString *POP = @"pop";
 {
     UIView *view = [self.views lastObject];
     if (animated) {
+        if (_isPoping) {
+            return;
+        }
+        _isPoping = YES;
         CAKeyframeAnimation *popAnimation = [self animationWithKeyPath:@"position.x" values:@[@(0.5*_width),@(1.5*_width)]];
         [popAnimation setValue:POP forKey:POP];
         [view.layer addAnimation:popAnimation forKey:POP];
@@ -105,8 +115,11 @@ static NSString *POP = @"pop";
 {
     UIView *view = [self.views lastObject];
     if (anim == [view.layer animationForKey:POP ]) {
+        _isPoping = NO;
         [self.views removeObject:view];
         [view removeFromSuperview];
+    }else if (anim == [view.layer animationForKey:PUSH]) {
+        _isPushing = NO;
     }
 }
 

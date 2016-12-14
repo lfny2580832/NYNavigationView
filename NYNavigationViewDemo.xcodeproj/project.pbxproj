@@ -18,6 +18,8 @@
 		4A17EAD31DFFE37000AC207C /* SecondView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A17EAD21DFFE37000AC207C /* SecondView.m */; };
 		4A17EAD61DFFE37900AC207C /* ThirdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A17EAD51DFFE37900AC207C /* ThirdView.m */; };
 		4A17EADF1DFFF79F00AC207C /* UIView+NYNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A17EADE1DFFF79F00AC207C /* UIView+NYNavigation.m */; };
+		4A17EAE31E00E66800AC207C /* back-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A17EAE11E00E66800AC207C /* back-red@2x.png */; };
+		4A17EAE41E00E66800AC207C /* back-red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A17EAE21E00E66800AC207C /* back-red@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		4A17EAD51DFFE37900AC207C /* ThirdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdView.m; sourceTree = "<group>"; };
 		4A17EADD1DFFF79F00AC207C /* UIView+NYNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NYNavigation.h"; sourceTree = "<group>"; };
 		4A17EADE1DFFF79F00AC207C /* UIView+NYNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NYNavigation.m"; sourceTree = "<group>"; };
+		4A17EAE11E00E66800AC207C /* back-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-red@2x.png"; sourceTree = "<group>"; };
+		4A17EAE21E00E66800AC207C /* back-red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-red@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 				4A17EAD21DFFE37000AC207C /* SecondView.m */,
 				4A17EAD41DFFE37900AC207C /* ThirdView.h */,
 				4A17EAD51DFFE37900AC207C /* ThirdView.m */,
+				4A17EAE01E00E66800AC207C /* Images */,
 				4A17EAB01DFFCCD700AC207C /* Supporting Files */,
 			);
 			path = NYNavigationViewDemo;
@@ -110,6 +115,15 @@
 				4A17EADE1DFFF79F00AC207C /* UIView+NYNavigation.m */,
 			);
 			path = NYNavigationView;
+			sourceTree = "<group>";
+		};
+		4A17EAE01E00E66800AC207C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4A17EAE11E00E66800AC207C /* back-red@2x.png */,
+				4A17EAE21E00E66800AC207C /* back-red@3x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +186,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A17EAC01DFFCCD700AC207C /* LaunchScreen.storyboard in Resources */,
+				4A17EAE31E00E66800AC207C /* back-red@2x.png in Resources */,
+				4A17EAE41E00E66800AC207C /* back-red@3x.png in Resources */,
 				4A17EABD1DFFCCD700AC207C /* Assets.xcassets in Resources */,
 				4A17EABB1DFFCCD700AC207C /* Main.storyboard in Resources */,
 			);
