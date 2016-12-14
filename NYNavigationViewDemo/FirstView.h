@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MidNYView.h"
 
-@interface FirstView : UIView
+@interface FirstView : MidNYView
 
 @end

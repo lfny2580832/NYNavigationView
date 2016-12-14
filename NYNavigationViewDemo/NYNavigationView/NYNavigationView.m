@@ -32,6 +32,8 @@ static NSString *POP = @"pop";
         self.views = [NSMutableArray array];
         self.rootView = rootView;
         [self.views addObject:rootView];
+        self.layer.borderWidth = 0.5;
+        self.layer.borderColor = [UIColor grayColor].CGColor;
     }
     return self;
 }
@@ -52,6 +54,12 @@ static NSString *POP = @"pop";
         CAKeyframeAnimation *pushAnimation = [self animationWithKeyPath:@"position.x" values:@[@(1.5*_width),@(0.5*_width)]];
         [pushAnimation setValue:PUSH forKey:PUSH];
         [view.layer addAnimation:pushAnimation forKey:PUSH];
+        
+        view.layer.shadowColor = [UIColor blackColor].CGColor;
+        view.layer.shadowOffset = CGSizeMake(-5, 0);
+        view.layer.shadowRadius = 3;
+        CAKeyframeAnimation *shadowAnimation = [self animationWithKeyPath:@"shadowOpacity" values:@[@0,@0.3]];
+//        [view.layer addAnimation:shadowAnimation forKey:nil];
         
         CAKeyframeAnimation *nextAnimation = [self animationWithKeyPath:@"position.x" values:@[@(0.5*_width),@(0.25*_width)]];
         UIView *nextView = [self.views lastObject];
@@ -76,6 +84,9 @@ static NSString *POP = @"pop";
         [popAnimation setValue:POP forKey:POP];
         [view.layer addAnimation:popAnimation forKey:POP];
 
+        CAKeyframeAnimation *shadowAnimation = [self animationWithKeyPath:@"shadowOpacity" values:@[@0.3,@0]];
+//        [view.layer addAnimation:shadowAnimation forKey:nil];
+        
         CAKeyframeAnimation *nextAnimation = [self animationWithKeyPath:@"position.x" values:@[@(0.25*_width),@(0.5*_width)]];
         UIView *nextView = self.views[self.views.count - 2];
         [nextView.layer addAnimation:nextAnimation forKey:nil];

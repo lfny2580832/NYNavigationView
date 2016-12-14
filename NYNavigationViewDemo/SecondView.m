@@ -16,30 +16,27 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor blueColor];
+        self.backgroundColor = [UIColor whiteColor];
         
-        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-        [btn setTitle:@"push" forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(push) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:btn];
-        
-        UIButton *btn2 = [[UIButton alloc]initWithFrame:CGRectMake(0, 100, 100, 100)];
-        [btn2 setTitle:@"pop" forState:UIControlStateNormal];
-        [btn2 addTarget:self action:@selector(pop) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:btn2];
+        [self setLeftImage:[UIImage imageNamed:@"back-red"] title:@"第二页" rightItem:@"下一页"];
+
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
+        imageView.center = self.center;
+        imageView.image = [UIImage imageNamed:@"dragon1"];
+        [self addSubview:imageView];
     }
     return self;
 }
 
-- (void)push
-{
-    ThirdView *view = [[ThirdView alloc]initWithFrame:CGRectMake(0, 0, 250, 400)];
-    [self.ny_naviagationView pushView:view animated:YES];
-}
-
-- (void)pop
+- (void)leftItemTapped
 {
     [self.ny_naviagationView popViewAnimated:YES];
+}
+
+- (void)rightItemTapped
+{
+    ThirdView *view = [[ThirdView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH*0.7, SCREEN_HEIGHT*0.7)];
+    [self.ny_naviagationView pushView:view animated:YES];
 }
 
 @end
